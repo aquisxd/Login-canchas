@@ -28,8 +28,10 @@
   <link rel="stylesheet" href="{{ url('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ url('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+  
 </head>
 <body class="sidebar-mini sidebar-closed sidebar-collapse" style="height: auto;">
+
 
 <div class="wrapper">
 
@@ -106,9 +108,9 @@
     </ul>
   </nav>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="sidebar-dark-success" >
     <a href="index3.html" class="brand-link">
-      <img src="{{ url('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{ url('dist/img/Insignia.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"> San Miguel</span>
     </a>
     <div class="sidebar">
