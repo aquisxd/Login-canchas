@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"  style="height: auto;"> <head>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="{{ url('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
   
 </head>
-<body class="sidebar-mini sidebar-closed sidebar-collapse" style="height: auto;">
+<body class="sidebar-mini sidebar-open" style="height: auto;">
 
 
 <div class="wrapper">
@@ -108,7 +108,7 @@
     </ul>
   </nav>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="sidebar-dark-success" >
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" >
     <a href="index3.html" class="brand-link">
       <img src="{{ url('dist/img/Insignia.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"> San Miguel</span>
@@ -122,15 +122,16 @@
       <nav class="mt-2">
 
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item menu-is-opening menu-open"">
-                <a href="#" class="nav-link active">
+            
+          <li class="nav-item ">
+                <a href="#" class="nav-link active  " >
                     <i class="nav-icon bi bi-person-fill"></i>
                     <p>
                         Usuarios
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
-                <ul class="nav nav-treeview" style="display: block;">
+                <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{ url('admin/usuarios/create') }}" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
@@ -145,17 +146,40 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="{{ route('logout') }}" 
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
-                   style="background-color: red; color: white; display: flex; align-items: center; padding: 10px; border-radius: 5px;">
-                    <i class="nav-icon bi bi-box-arrow-left" style="margin-right: 5px;"></i>
-                    Cerrar Sesión
-                </a>
-            </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+
+            <li class="nav-item ">
+              <a href="#" class="nav-link active" style="background-color: #28a745">
+                  <i class="nav-icon bi bi-person-workspace"></i>
+                  <p>
+                      Secretarias
+                      <i class="right fas fa-angle-left"></i>
+                  </p>
+              </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item ">
+                      <a href="{{ url('admin/secretarias/create') }}" class="nav-link active text-success">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Creación de Secretarias</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="{{ url('admin/secretarias') }}" class="nav-link active ">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Listado de Secretarias</p>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('logout') }}" class="nav-link text-white bg-danger" 
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="nav-icon bi bi-box-arrow-left"></i>
+                <p>Cerrar Sesión</p>
+            </a>
+        </li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
         </ul>
     </nav>
 

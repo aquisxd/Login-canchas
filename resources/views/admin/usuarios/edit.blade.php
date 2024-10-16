@@ -22,7 +22,7 @@
             </div>
             
             <div class="card-body">
-            <form action="{{url('admin/usuarios',$usuario->id)}}" method="POST">
+            <form action="{{url('admin/usuarios',$usuario->id)}}" method="POST">  
                 @csrf
                 @method('PUT')
                 <div class="row">
