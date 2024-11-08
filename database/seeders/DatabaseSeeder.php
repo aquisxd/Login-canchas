@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cliente;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,7 +25,7 @@ class DatabaseSeeder extends Seeder
    
     public function run(): void
     {
-    User:: create([
+    /*User:: create([
         'name' => 'Administrador',
         'email' => 'admin@admin.com',
         'password' =>Hash::make('12345678')
@@ -43,7 +44,9 @@ class DatabaseSeeder extends Seeder
         'email' => 'cliente1@admin.com',
         'password' =>Hash::make('12345678')
 
-    ]);
+    ]);*/
+
+    $this->call([ClienteSeeder::class,]);
 
 
     }

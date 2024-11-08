@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CanchaController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\Cliente;
 use App\Models\Secretaria;
 use GuzzleHttp\Promise\Create;
 
@@ -74,6 +77,65 @@ Route::get('/admin/secretarias/{id}/confirm-delete', [SecretariaController::clas
 
  // Ruta para el admin -- delete
  Route::delete('/admin/secretarias/{id}', [SecretariaController::class, 'destroy'])->name('admin.secretarias.destroy')->middleware('auth');
+
+
+ // Rutas de autenticación para admin - clientes
+
+ // Ruta para el admin -- clientes
+Route::get('/admin/clientes', [ClienteController::class, 'index'])->name('admin.clientes.index')->middleware('auth');
+
+// Ruta para el admin -- clientes
+Route::get('/admin/clientes/create', [ClienteController::class, 'create'])->name('admin.clientes.create')->middleware('auth');
+
+// Ruta para el admin -- secretarias
+Route::post('/admin/clientes/create', [ClienteController::class, 'store'])->name('admin.clientes.store')->middleware('auth');
+
+// Ruta para el admin -- show
+Route::get('/admin/clientes/{id}', [ClienteController::class, 'show'])->name('admin.clientes.show')->middleware('auth');
+
+// Ruta para el admin -- edit
+Route::get('/admin/clientes/{id}/edit', [ClienteController::class, 'edit'])->name('admin.clientes.edit')->middleware('auth');
+
+// Ruta para el admin -- update
+Route::put('/admin/clientes/{id}', [ClienteController::class, 'update'])->name('admin.clientes.update')->middleware('auth');
+
+// Ruta para el admin -- delete
+Route::get('/admin/clientes/{id}/confirm-delete', [ClienteController::class, 'confirmDelete'])->name('admin.clientes.confirmDelete')->middleware('auth');
+
+// Ruta para el admin -- delete
+Route::delete('/admin/clientes/{id}', [ClienteController::class, 'destroy'])->name('admin.clientes.destroy')->middleware('auth');
+
+
+
+// Rutas de autenticación para admin - canchas
+
+ // Ruta para el admin -- canchas
+ Route::get('/admin/canchas', [CanchaController::class, 'index'])->name('admin.canchas.index')->middleware('auth');
+
+ // Ruta para el admin -- canchas
+ Route::get('/admin/canchas/create', [CanchaController::class, 'create'])->name('admin.canchas.create')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::post('/admin/canchas/create', [CanchaController::class, 'store'])->name('admin.canchas.store')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::get('/admin/canchas/{id}', [CanchaController::class, 'show'])->name('admin.canchas.show')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::get('/admin/canchas/{id}/edit', [CanchaController::class, 'edit'])->name('admin.canchas.edit')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::put('/admin/canchas/{id}', [CanchaController::class, 'update'])->name('admin.canchas.update')->middleware('auth');
+ 
+ // Ruta para el admin -- delete
+ Route::get('/admin/canchas/{id}/confirm-delete', [CanchaController::class, 'confirmDelete'])->name('admin.canchas.confirmDelete')->middleware('auth');
+ 
+ // Ruta para el admin -- delete
+ Route::delete('/admin/canchas/{id}', [CanchaController::class, 'destroy'])->name('admin.canchas.destroy')->middleware('auth');
+ 
+
+
+
 
 
 

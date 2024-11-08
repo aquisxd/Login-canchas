@@ -1,4 +1,3 @@
-
 @extends('layouts.admin')
 
 @section('content')
@@ -31,6 +30,36 @@
                 <i class="ion bi bi-person-workspace"></i>
             </div>
             <a href="{{url('admin/secretarias')}}" class="small-box-footer">
+                Más información <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary">
+            <div class="inner">
+                <h3>{{$total_clientes}}</h3>
+                <p>Clientes</p>
+            </div>
+            <div class="icon">
+                <i class="ion bi nav-icon bi bi-person-vcard"></i>
+            </div>
+            <a href="{{url('admin/clientes')}}" class="small-box-footer">
+                Más información <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary">
+            <div class="inner">
+                <h3>{{$total_canchas}}</h3>
+                <p>Canchas</p>
+            </div>
+            <div class="icon">
+                <i class="ion nav-icon bi bi-file-earmark-spreadsheet"></i>
+            </div>
+            <a href="{{url('admin/canchas')}}" class="small-box-footer">
                 Más información <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>

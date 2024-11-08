@@ -170,6 +170,54 @@
                   </li>
               </ul>
           </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link active" style="background-color: #ffce33">
+                <i class="nav-icon bi bi-person-vcard"></i>
+                <p>
+                    Clientes
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item ">
+                    <a href="{{ url('admin/clientes/create') }}" class="nav-link active text-success">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Creación de Clientes</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url('admin/clientes') }}" class="nav-link active ">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Listado de Clientes</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-item ">
+          <a href="#" class="nav-link active" style="background-color: #33cfff">
+              <i class="nav-icon bi bi-file-earmark-spreadsheet"></i>
+              <p>
+                  Canchas
+                  <i class="right fas fa-angle-left"></i>
+              </p>
+          </a>
+          <ul class="nav nav-treeview">
+              <li class="nav-item ">
+                  <a href="{{ url('admin/canchas/create') }}" class="nav-link active text-success">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Creación de Canchas</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="{{ url('admin/canchas') }}" class="nav-link active ">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Listado de Canchas</p>
+                  </a>
+              </li>
+          </ul>
+      </li>
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link text-white bg-danger" 
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
