@@ -218,6 +218,30 @@
               </li>
           </ul>
       </li>
+
+      <li class="nav-item ">
+        <a href="#" class="nav-link active" style="background-color: ">
+            <i class="nav-icon bi bi-calendar-check"></i>
+            <p>
+                Reservas
+                <i class="right fas fa-angle-left"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item ">
+                <a href="{{ url('admin/reservas/create') }}" class="nav-link active text-success">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Creación de reservas</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url('admin/reservas') }}" class="nav-link active ">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Listado de Reservas</p>
+                </a>
+            </li>
+        </ul>
+    </li>
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link text-white bg-danger" 
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

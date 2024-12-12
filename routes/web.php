@@ -5,9 +5,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CanchaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReservaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\Cliente;
+use App\Models\Reserva;
 use App\Models\Secretaria;
 use GuzzleHttp\Promise\Create;
 
@@ -132,6 +134,33 @@ Route::delete('/admin/clientes/{id}', [ClienteController::class, 'destroy'])->na
  
  // Ruta para el admin -- delete
  Route::delete('/admin/canchas/{id}', [CanchaController::class, 'destroy'])->name('admin.canchas.destroy')->middleware('auth');
+
+
+ // Rutas de autenticación para admin - reservas
+
+ // Ruta para el admin -- reservas
+ Route::get('/admin/reservas', [ReservaController::class, 'index'])->name('admin.reservas.index')->middleware('auth');
+
+ // Ruta para el admin -- canchas
+ Route::get('/admin/reservas/create', [ReservaController::class, 'create'])->name('admin.reservas.create')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::post('/admin/reservas/create', [ReservaController::class, 'store'])->name('admin.reservas.store')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::get('/admin/reservas/{id}', [ReservaController::class, 'show'])->name('admin.reservas.show')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::get('/admin/reservas/{id}/edit', [ReservaController::class, 'edit'])->name('admin.reservas.edit')->middleware('auth');
+ 
+ // Ruta para el admin -- canchas
+ Route::put('/admin/reservas/{id}', [ReservaController::class, 'update'])->name('admin.reservas.update')->middleware('auth');
+ 
+ // Ruta para el admin -- delete
+ Route::get('/admin/reservas/{id}/confirm-delete', [ReservaController::class, 'confirmDelete'])->name('admin.reservas.confirmDelete')->middleware('auth');
+ 
+ // Ruta para el admin -- delete
+ Route::delete('/admin/reservas/{id}', [ReservaController::class, 'destroy'])->name('admin.reservas.destroy')->middleware('auth');
  
 
 

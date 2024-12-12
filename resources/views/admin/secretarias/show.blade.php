@@ -4,6 +4,7 @@
 <div class="row">
     <h1>Secretaria: {{$secretaria->nombres}} {{$secretaria->apellidos}}</h1>
 </div>
+
 <hr>
 <div class="row"> 
     <div class="col-md-12"> 
